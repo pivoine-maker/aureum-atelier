@@ -1,0 +1,99 @@
+{
+  "name": "aureum-atelier",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A museum-inspired Codex workspace IDE.",
+  "author": "Aureum Atelier",
+  "main": "out/main/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "artworks:download": "node scripts/artworks/download-fallbacks.mjs",
+    "build": "electron-vite build",
+    "pack:mac": "npm run build && electron-builder --mac dir",
+    "dist:mac": "npm run build && electron-builder --mac dmg zip",
+    "preview": "electron-vite preview",
+    "preview:capture": "electron scripts/capture-preview.cjs",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm test -- --run && npm run typecheck && npm run build",
+    "postinstall": "node scripts/postinstall/fix-node-pty-spawn-helper.cjs"
+  },
+  "build": {
+    "appId": "com.aureum.atelier",
+    "productName": "Aureum Atelier",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/node-pty/**",
+      "node_modules/ffmpeg-static/**"
+    ],
+    "files": [
+      "out/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "hardenedRuntime": false,
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "dmg": {
+      "title": "Aureum Atelier ${version}",
+      "artifactName": "Aureum-Atelier-${version}-${arch}.${ext}"
+    },
+    "artifactName": "Aureum-Atelier-${version}-${arch}.${ext}"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.6",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/jetbrains-mono": "^5.2.6",
+    "@monaco-editor/react": "^4.7.0",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "ffmpeg-static": "^5.3.0",
+    "lucide-react": "^0.468.0",
+    "mammoth": "^1.12.0",
+    "monaco-editor": "^0.56.0",
+    "node-pty": "^1.1.0",
+    "pdf-parse": "^2.4.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sharp": "^0.35.3",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^35.0.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^3.0.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pivoine-maker/aureum-atelier.git"
+  },
+  "homepage": "https://github.com/pivoine-maker/aureum-atelier#readme",
+  "bugs": {
+    "url": "https://github.com/pivoine-maker/aureum-atelier/issues"
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#35131b"/>
+      <stop offset="0.52" stop-color="#160b09"/>
+      <stop offset="1" stop-color="#080604"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#fff0bd"/>
+      <stop offset="0.28" stop-color="#dfbd69"/>
+      <stop offset="0.66" stop-color="#9b682c"/>
+      <stop offset="1" stop-color="#f1d58b"/>
+    </linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#d8b45a" stop-opacity="0.34"/><stop offset="1" stop-color="#d8b45a" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.55"/></filter>
+  </defs>
+  <rect x="36" y="36" width="952" height="952" rx="220" fill="url(#bg)"/>
+  <circle cx="512" cy="484" r="390" fill="url(#glow)"/>
+  <path d="M190 512c52-24 84-72 96-144 38 48 76 72 114 72-34-61-38-125-12-192 36 68 77 107 124 117 47-10 88-49 124-117 26 67 22 131-12 192 38 0 76-24 114-72 12 72 44 120 96 144-50 26-80 69-92 129-43-38-87-57-132-57 20 64 17 121-10 171-30-48-59-76-88-86-29 10-58 38-88 86-27-50-30-107-10-171-45 0-89 19-132 57-12-60-42-103-92-129Z" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round" opacity="0.94"/>
+  <circle cx="512" cy="498" r="238" fill="#0d0906" stroke="url(#gold)" stroke-width="14" filter="url(#shadow)"/>
+  <circle cx="512" cy="498" r="210" fill="none" stroke="#6c4520" stroke-width="3"/>
+  <text x="512" y="572" text-anchor="middle" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="216" font-weight="600" letter-spacing="-18">AA</text>
+  <path d="M392 680h240" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="372" cy="680" r="8" fill="#d8b45a"/><circle cx="652" cy="680" r="8" fill="#d8b45a"/>
+</svg>

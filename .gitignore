@@ -1,0 +1,21 @@
+node_modules/
+out/
+dist/
+release/
+coverage/
+artifacts/
+.generated/
+.DS_Store
+*.log
+
+# Local credentials, caches, and signing files
+.env
+.env.*
+!.env.example
+.npmrc
+.codex/
+.artwork-downloads/
+*.pem
+*.key
+*.p12
+*.pfx
